@@ -1,0 +1,556 @@
+:root {
+  /* Ana renkler */
+  --primary-color: #00224D;
+  --accent-color: #00224D;
+  --logo-color: #B197FC;
+  
+  /* Aydınlık mod değişkenleri */
+  --bg-light: #ffffff;
+  --text-light: #00224D;
+  --card-bg-light: #ffffff;
+  --border-light: #00224D;
+  --hover-light: #00224D;
+  --button-bg-light: #00224D;
+  --button-text-light: #ffffff;
+  --input-bg-light: #ffffff;
+  --input-border-light: #00224D;
+
+  /* Karanlık mod değişkenleri */
+  --bg-dark: #090808;
+  --text-dark: #ffffff;
+  --card-bg-dark: #090808;
+  --border-dark: #ffffff;
+  --hover-dark: #ffffff;
+  --button-bg-dark: #ffffff;
+  --button-text-dark: #090808;
+  --input-bg-dark: #ffffff;
+  --input-border-dark: #ffffff;
+}
+
+/* Temel geçiş animasyonu */
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Aydınlık mod (varsayılan) */
+:root[data-theme="light"] body,
+body {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+/* Karanlık mod */
+:root[data-theme="dark"] body {
+  background-color: var(--bg-dark) !important;
+  color: var(--text-dark) !important;
+}
+
+.card {
+  background-color: var(--card-bg-light);
+  border-color: var(--border-light);
+}
+
+.btn-primary {
+  background-color: var(--button-bg-light);
+  border-color: var(--button-bg-light);
+  color: var(--button-text-light);
+}
+
+.btn-primary:hover {
+  background-color: var(--hover-light);
+  border-color: var(--hover-light);
+  opacity: 0.9;
+}
+
+.form-control {
+  background-color: var(--input-bg-light);
+  border-color: var(--input-border-light);
+  color: var(--text-light);
+}
+
+/* Navbar Stilleri - Aydınlık Tema */
+.navbar {
+  background-color: #00224D;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 34, 77, 0.2);
+}
+
+.navbar-brand,
+.navbar .nav-link {
+  color: #ffffff !important;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-brand:hover,
+.navbar .nav-link:hover {
+  color: #ffffff !important;
+  background-color: #00224D;
+  border-radius: 4px;
+}
+
+.navbar .fas,
+.navbar .far,
+.navbar .fab {
+  color: #ffffff !important;
+}
+
+/* Navbar Stilleri - Karanlık Tema */
+[data-theme="dark"],
+[data-theme="dark"] body,
+[data-theme="dark"] html {
+  background-color: #090808 !important;
+  color: #ffffff;
+}
+
+[data-theme="dark"] body {
+  background-color: #090808 !important;
+}
+
+[data-theme="dark"] .container,
+[data-theme="dark"] .container-fluid {
+  background-color: #090808 !important;
+}
+
+[data-theme="dark"] main {
+  background-color: #090808 !important;
+}
+
+[data-theme="dark"] .card {
+  background-color: #090808;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .navbar {
+  background-color: #090808 !important;
+  border-bottom: 1px solid #090808;
+}
+
+[data-theme="dark"] .navbar-brand,
+[data-theme="dark"] .navbar .nav-link {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .navbar .fas,
+[data-theme="dark"] .navbar .far,
+[data-theme="dark"] .navbar .fab {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .navbar-brand:hover,
+[data-theme="dark"] .navbar .nav-link:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+/* Özel bileşen stilleri */
+.stats-card {
+  background: var(--primary-color);
+  color: var(--button-text-light);
+}
+
+.feature-card {
+  border-left: 4px solid var(--accent-color);
+}
+
+.alert-success {
+  background-color: #4BB543 !important;
+  color: #ffffff !important;
+  border: none;
+  padding: 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(75, 181, 67, 0.2);
+}
+
+[data-theme="dark"] .alert-success {
+  background-color: #4BB543 !important;
+  color: #ffffff !important;
+}
+
+.alert-danger {
+  background-color: #FF4D4D !important;
+  color: #ffffff !important;
+  border: none;
+  padding: 1rem;
+  border-radius: 4px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(255, 77, 77, 0.2);
+}
+
+[data-theme="dark"] .alert-danger {
+  background-color: #FF4D4D !important;
+  color: #ffffff !important;
+}
+
+.table {
+  --bs-table-hover-bg: rgba(0, 34, 77, 0.1);
+}
+
+[data-theme="dark"] .table {
+  color: var(--text-dark);
+  --bs-table-hover-bg: rgba(0, 34, 77, 0.1);
+}
+
+/* Animasyonlar */
+.btn, .nav-link, .form-control {
+  transition: all 0.3s ease;
+}
+
+/* Özel scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+  background: #2B2A4C;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+  background: #666;
+}
+
+/* Loading spinner özelleştirmesi */
+.spinner-border {
+  color: var(--primary-color);
+}
+
+[data-theme="dark"] .spinner-border {
+  color: var(--accent-color);
+}
+
+/* Badge özelleştirmesi */
+.badge {
+  background-color: var(--primary-color);
+  color: var(--button-text-light);
+}
+
+[data-theme="dark"] .badge {
+  background-color: #ffffff;
+  color: #090808;
+}
+
+/* İkon renkleri */
+.text-primary,
+.fas,
+.far,
+.fab {
+  color: var(--primary-color) !important;
+}
+
+/* Geri dönüşüm logosu için özel renk */
+.fa-recycle {
+  color: var(--logo-color) !important;
+}
+
+[data-theme="dark"] .text-primary,
+[data-theme="dark"] .fas,
+[data-theme="dark"] .far,
+[data-theme="dark"] .fab {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .fa-recycle {
+  color: var(--logo-color) !important;
+}
+
+.bg-primary {
+  background-color: #00224D !important;
+}
+
+/* Karanlık tema için de aynı renk */
+[data-theme="dark"] .bg-primary {
+  background-color: #090808 !important;
+  box-shadow: 0 2px 4px rgba(9, 8, 8, 0.2);
+}
+
+/* Navbar stilleri güncelleme */
+.navbar.bg-primary {
+  background-color: #00224D !important;
+  box-shadow: 0 2px 4px rgba(0, 34, 77, 0.2);
+}
+
+/* Karanlık tema navbar düzeltmesi */
+[data-theme="dark"] .bg-primary {
+  background-color: #090808 !important;
+  box-shadow: 0 2px 4px rgba(9, 8, 8, 0.2);
+}
+
+[data-theme="dark"] .navbar.bg-primary {
+  background-color: #090808 !important;
+  box-shadow: 0 2px 4px rgba(9, 8, 8, 0.2);
+}
+
+[data-theme="dark"] .navbar-dark.bg-primary {
+  background-color: #090808 !important;
+}
+
+[data-theme="dark"] .navbar-dark .navbar-nav .nav-link {
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .navbar-dark .navbar-brand {
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .navbar-dark .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* Karanlık mod geçişleri */
+.navbar,
+.card,
+.btn,
+.form-control,
+.badge,
+.alert,
+.table,
+.container,
+.container-fluid {
+  transition: all 0.3s ease !important;
+}
+
+/* Karanlık tema geçişleri */
+[data-theme="dark"] {
+  transition: all 0.3s ease;
+}
+
+[data-theme="dark"] .navbar {
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+[data-theme="dark"] .card {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="dark"] .btn {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="dark"] .form-control {
+  background-color: var(--input-bg-dark);
+  border-color: var(--input-border-dark);
+  color: #090808 !important;
+}
+
+[data-theme="dark"] .form-control::placeholder {
+  color: #090808 !important;
+  opacity: 0.7;
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+  background-color: var(--input-bg-dark);
+  border-color: var(--input-border-dark);
+  color: #090808 !important;
+}
+
+[data-theme="dark"] .navbar-brand {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .navbar-brand:hover {
+  color: #e2e2e2 !important;
+  background-color: transparent;
+}
+
+/* Önceki navbar-dark brand stilini override et */
+[data-theme="dark"] .navbar-dark .navbar-brand {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .navbar-dark .navbar-brand:hover {
+  color: #e2e2e2 !important;
+  background-color: transparent;
+}
+
+[data-theme="dark"] .form-control {
+  background-color: #ffffff !important;
+  border-color: var(--input-border-dark);
+  color: #090808 !important;
+}
+
+[data-theme="dark"] .form-control::placeholder {
+  color: #090808 !important;
+  opacity: 0.7;
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+  background-color: #ffffff !important;
+  color: #090808 !important;
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder,
+[data-theme="dark"] select::placeholder {
+  color: #090808 !important;
+  opacity: 0.7;
+}
+
+[data-theme="dark"] .form-control,
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select,
+[data-theme="dark"] .form-control:focus {
+  background-color: #ffffff !important;
+  border-color: var(--input-border-dark);
+  color: #090808 !important;
+}
+
+[data-theme="dark"] .form-control::placeholder,
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder,
+[data-theme="dark"] select::placeholder {
+  color: #090808 !important;
+  opacity: 0.7;
+}
+
+/* Login ve Register form elemanları için özel stil */
+[data-theme="dark"] .login-form input,
+[data-theme="dark"] .register-form input,
+[data-theme="dark"] .login-form .form-control,
+[data-theme="dark"] .register-form .form-control {
+  background-color: #ffffff !important;
+  color: #090808 !important;
+}
+
+[data-theme="dark"] .login-form input::placeholder,
+[data-theme="dark"] .register-form input::placeholder {
+  color: #090808 !important;
+  opacity: 0.7;
+}
+
+.form-floating label {
+  color: #000000 !important;
+}
+
+.form-floating input {
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .form-floating label {
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .form-floating input {
+  color: #000000 !important;
+}
+
+.btn-link {
+  color: #00224D !important;
+}
+
+.btn-link:hover {
+  color: #00224D !important;
+  opacity: 0.8;
+}
+
+[data-theme="dark"] .btn-link {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .btn-link:hover {
+  color: #e2e2e2 !important;
+}
+
+.btn-secondary:hover {
+  background-color: #00224D !important;
+  border-color: #00224D !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .btn-secondary:hover {
+  background-color: #ffffff !important;
+  border-color: #ffffff !important;
+  color: #090808 !important;
+}
+
+.btn-outline-primary {
+  color: #00224D !important;
+  border-color: #00224D !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #00224D !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .btn-outline-primary {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+[data-theme="dark"] .btn-outline-primary:hover {
+  background-color: #ffffff !important;
+  color: #090808 !important;
+}
+
+/* Anasayfaya dön butonu için */
+.btn-outline-secondary {
+  color: #00224D !important;
+  border-color: #00224D !important;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #00224D !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .btn-outline-secondary {
+  color: #ffffff !important;
+  border-color: #ffffff !important;
+}
+
+[data-theme="dark"] .btn-outline-secondary:hover {
+  background-color: #ffffff !important;
+  color: #090808 !important;
+}
+
+[data-theme="dark"] select.form-select {
+  background-color: #090808 !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] select.form-select option {
+  background-color: #090808 !important;
+  color: #ffffff !important;
+}
+
+/* Alt kısmı gizle */
+.bottom-section {
+  display: none !important;
+}
+
+/* Çevre Dostu Seviye göstergesini gizle */
+.level-indicator {
+  display: none !important;
+}
+
+/* Yeni Geri Dönüşüm butonunu gizle */
+.new-recycling-button {
+  display: none !important;
+}

@@ -1,0 +1,245 @@
+:root {
+  --bg-color: #f4f4f4;
+  --text-color: #000000;
+  --header-bg: #00224D;
+  --header-text: #000000;
+  --card-bg: #ffffff;
+  --stat-bg: #e0f7fa;
+}
+
+body.dark-mode {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --header-bg: #0a7c75;
+  --header-text: #ffffff;
+  --card-bg: #2d2d2d;
+  --stat-bg: #1f3d42;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Header */
+.header {
+  background-color: var(--header-bg);
+  padding: 10px 20px;
+  color: var(--header-text);
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.dark-mode-toggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.dark-mode-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff; /* Logo metni beyaz */
+}
+
+.user-profile {
+  float: right;
+  color: #000000; /* Kullanıcı profilinin rengi */
+  font-size: 18px; /* Profil yazısı için boyut */
+}
+
+/* Classification */
+.classification {
+  padding: 20px;
+  background-color: #f0f0f0; /* Arka plan rengi */
+  border-radius: 8px; /* Köşeleri yuvarlattık */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+}
+
+.classification h1 {
+  text-align: center;
+  color: #333; /* Başlık rengi */
+}
+
+.classification input[type="file"] {
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.result {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 18px;
+  color: #00224D; /* Sonuç yazısının rengi */
+}
+
+/* Statistics */
+.statistics {
+  padding: 20px;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.statistics h2 {
+  text-align: center;
+  color: #333;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Mobil uyumlu hale getirmek için */
+}
+
+.stat {
+  text-align: center;
+  background-color: var(--stat-bg);
+  border-radius: 8px;
+  padding: 15px;
+  flex: 1;
+  margin: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Gölge ekleyerek derinlik verdik */
+}
+
+.stat h3 {
+  color: #333;
+  font-size: 18px;
+}
+
+.stat p {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00224D; /* İstatistik değerleri için renk */
+}
+
+/* Kamera ile Sınıflandır ve Yeni Etiketleme Oluştur Butonları */
+.button-group {
+  display: flex;
+  justify-content: center; /* Butonları yatayda ortala */
+  gap: 20px; /* Butonlar arasındaki boşluk */
+  margin: 20px 0; /* Üst ve alt boşluk */
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 30px; /* Buton boyutları */
+  background-color: #00224D; /* Buton arka plan rengi */
+  color: #fff; /* Metin rengi */
+  font-size: 18px; /* Yazı boyutu */
+  border: none; /* Kenarlık kaldırıldı */
+  border-radius: 8px; /* Köşeler yuvarlatıldı */
+  cursor: pointer; /* İşaretçi tipi */
+  transition: all 0.3s ease; /* Geçiş efekti */
+  text-align: center;
+  text-decoration: none; /* Alt çizgi kaldırıldı */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hafif gölge */
+}
+
+.button:hover {
+  background-color: #00224D; /* Hover efekti */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Hover'da gölge arttı */
+}
+
+/* Kamera Ekranı */
+.camera {
+  display: flex;
+  flex-direction: column; /* Kamera ve içerikler üst üste */
+  align-items: center; /* Yatayda ortala */
+  justify-content: center; /* Dikeyde ortala */
+  height: 100vh; /* Tüm ekran yüksekliği */
+  background-color: #f9f9f9; /* Arka plan rengi */
+}
+
+.video {
+  width: 80%; /* Kamera genişliği (ekranın %80'i) */
+  max-width: 600px; /* Maksimum genişlik */
+  border: 2px solid #ddd; /* Kenarlık */
+  border-radius: 8px; /* Köşeleri yuvarla */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Gölge */
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+.header .login-button {
+  background: none;
+  border: none;
+  color: var(--header-text);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s;
+}
+
+.header .login-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.header .logout-button {
+  background: none;
+  border: 1px solid var(--header-text);
+  color: var(--header-text);
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-left: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.header .logout-button:hover {
+  background-color: var(--header-text);
+  color: var(--header-bg);
+}
+
+.header .user-profile {
+  display: flex;
+  align-items: center;
+  color: var(--header-text);
+  font-size: 16px;
+}
+
+.header-profile-photo {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+[data-theme="dark"] .header-profile-photo {
+  border-color: #1a1a1a;
+}
